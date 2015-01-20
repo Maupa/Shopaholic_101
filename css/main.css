@@ -370,10 +370,12 @@ hr, .colophon {
 /*****************************************************************************/
 
 
-
+div.row {
+  clear:both;
+}
 div.row.clear {
   line-height: 0px; 
-  font-size: 0px; 
+  font-size: 0px;
   clear:both;
 }
 .col-1,
