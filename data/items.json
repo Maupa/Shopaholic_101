@@ -1,0 +1,70 @@
+{
+	"name": "Tea Dynasty",
+	"logo": "",
+	"description": "Make tea, not war.",
+	"info" : {
+		
+		"owner":"Ackermann Yuriy",
+		"phone": "0212346521",
+		"email": "ackermann.yuriy@gmail.com",
+		"address":"Somewhere Street N, Far Away Town, 2392, State of Mountains and Trees"
+	},
+	"items": [
+		{
+			"name": "Lapsang souchong",
+			"description": "Black smoked tea.",
+			"id": "0001",
+			"country":"China",
+			"type":"Black",
+			"image": "",
+			"category":"Black tea",
+			"weight": "100g",
+			"price": 12.00,
+		},
+		{
+			"name": "Genmaicha",
+			"description": "Sencha with rice.",
+			"id": "0002",
+			"country":"Japan",
+			"type":"Green",
+			"image": "",
+			"category":"Green tea.",
+			"weight": "100g",
+			"price": 13.99
+		},
+		{
+			"name": "Sencha",
+			"description": "Japanese classic green tea.",
+			"id": "0003",
+			"country":"Japan",
+			"type":"Green",
+			"image": "",
+			"category":"Green tea.",
+			"weight": "100g",
+			"price": 15.00
+		},
+		{
+			"name": "Da Hong Pao",
+			"description": "Premium Oolong",
+			"id": "0004",
+			"country":"China",
+			"type":"Oolong",
+			"image": "",
+			"category":"Chinese oolong",
+			"price": 25.88
+		},
+		{
+			"name": "Tung-ting",
+			"description": "Climb to mountain with cold feet.",
+			"id": "0005",
+			"country":"Taiwan",
+			"type":"Oolong",
+			"image": "",
+			"category":"Taiwanese Oolong",
+			"price": 25.88
+		},
+
+
+
+	]
+}
