@@ -338,6 +338,36 @@ a:hover {
 	text-transform: lowercase;
 }
 
+p.name{
+	text-align: right;
+	padding:6px 10px;
+}
+
+a.button,
+.button {
+	/*width: 50%;*/
+	border:1px solid #969696;
+	text-align:center; 
+	text-decoration:none;
+	color: white;
+	margin-left: 0.25em;
+	padding:6px 10px;
+	font-family:verdana, sans-serif;
+	display:inline-block;
+	background: #3b8c1b;
+}
+a.button:hover,
+.button:hover {
+	color: white;  
+	background: #56a637;
+}
+a.button:active,
+.button:active {
+	color: white;
+	background: lightgreen;
+	border:1px solid #171717;
+}
+
 #sidebar-button {
 	height: intrinsic;
 	cursor: pointer;
@@ -409,10 +439,10 @@ div.row.clear {
 	box-sizing: border-box;
 }
 
-.col-1{width: 8.333333333333332%;}
-.col-2{width: 16.666666666666664%;}
-.col-3{width: 25%;}
-.col-4{width: 33.33333333333333%;}
-.col-6{width: 50%;}
-.col-9{width: 75%;}
-.col-12{width: 100%;}
+.col-1{width: 7.333333333333332%;}
+.col-2{width: 15.666666666666664%;}
+.col-3{width: 24%;}
+.col-4{width: 32.33333333333333%;}
+.col-6{width: 49%;}
+.col-9{width: 74%;}
+.col-12{width: 99%;}
