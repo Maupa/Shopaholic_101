@@ -24,13 +24,17 @@
 				$.each( data.items, function( key, value ) {
 					$(Super).append(models.item(value));
 				});
+				$('a.button').click(function(){ //Adds click handler
+					console.log(this);
+				})
+
 			},
-			desc: function(){ //Renders Description
-				options.header.append('<img src=\"data/' + jsonData.logo + '\"/>'); //Add image
-				options.header.append('<h1>' + jsonData.name + '</h1>'); //Add name
-				options.header.append('<h3>' + jsonData.description + '</h3>');//Add description
+			desc: function(data){ //Renders Description
+				options.header.append('<img src=\"data/' + data.logo + '\"/>'); //Add image
+				options.header.append('<h1>' + data.name + '</h1>'); //Add name
+				options.header.append('<h3>' + data.description + '</h3>');//Add description
 				
-				$('head').append('<title>' + jsonData.name + '</title>'); //Add name
+				$('head').append('<title>' + data.name + '</title>'); //Add name
 			},
 			cart: function(){
 
@@ -39,11 +43,9 @@
 
 		$.getJSON( 'data/items.json', function( data ) {
 			jsonData = data; //Saving data
-			render.desc(); //Rendering description
+			render.desc(data); //Rendering description
 			render.items(data); //Rendering items
 		});
-
-
 	};
 	
 }(jQuery));
