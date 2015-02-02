@@ -372,6 +372,20 @@ a.button:active,
 	border:1px solid #171717;
 }
 
+
+a.button.red,
+.button.red {
+	background: #FF0000;
+}
+a.button.red:hover,
+.button.red:hover {
+	background: #8B0000;
+}
+a.button.red:active,
+.button.red:active{
+	background: #800000;
+}
+
 #sidebar-button {
 	height: intrinsic;
 	cursor: pointer;
