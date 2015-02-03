@@ -16,7 +16,7 @@
 			"id": "0001",
 			"country":"China",
 			"type":"Black",
-			"image": "",
+			"image": "img/lapsangsouchong.jpg",
 			"category":"Black tea",
 			"weight": "100g",
 			"price": 12.00
@@ -27,7 +27,7 @@
 			"id": "0002",
 			"country":"Japan",
 			"type":"Green",
-			"image": "",
+			"image": "img/genmaicha.jpg",
 			"category":"Green tea.",
 			"weight": "100g",
 			"price": 13.99
@@ -38,7 +38,7 @@
 			"id": "0003",
 			"country":"Japan",
 			"type":"Green",
-			"image": "",
+			"image": "img/sencha.jpg",
 			"category":"Green tea.",
 			"weight": "100g",
 			"price": 15.00
@@ -49,7 +49,7 @@
 			"id": "0004",
 			"country":"China",
 			"type":"Oolong",
-			"image": "",
+			"image": "img/dahongpao.jpg",
 			"category":"Chinese oolong",
 			"price": 25.88
 		},
@@ -59,7 +59,7 @@
 			"id": "0005",
 			"country":"Taiwan",
 			"type":"Oolong",
-			"image": "",
+			"image": "img/tungting.jpg",
 			"category":"Taiwanese Oolong",
 			"price": 25.88
 		}

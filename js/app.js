@@ -16,7 +16,7 @@
 				return '<div class="col-3">' + 
 						'<div class="item">' + 
 							'<div class="col-12">' + 
-								'<img src="http://placehold.it/150x150" style="width:100%;">' + 
+								'<img src="data/' + item.image + '">' + 
 							'</div>' + 
 							'<p class="name">' + item.name + '<a class="button ' + colour + '" data-id="' + item.id + '" href="#">' + text + '</a></p>' + 
 						'</div>' + 
