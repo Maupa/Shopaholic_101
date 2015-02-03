@@ -2,8 +2,9 @@
 
 	$.fn.shopaholic = function(params) {
 		var options = $.extend({
-			data: '/data/items.json' //This line adding another parameter to the options... ```expands``` it
+			data: '/data/items.json', //This line adding another parameter to the options... ```expands``` it
 		}, params);
+		var cartID = options.username + '.cart';
 		var Super = this;
 		var jsonData = {};
 		var shelf = {};
@@ -26,11 +27,11 @@
 		var db = {
 
 			list: function(){ //Returns array of items.
-				return JSON.parse(localStorage.getItem('cart')) || [];
+				return JSON.parse(localStorage.getItem(cartID)) || [];
 			},
 
 			in: function(id){
-				var temp = JSON.parse(localStorage.getItem('cart')) || [];
+				var temp = JSON.parse(localStorage.getItem(cartID)) || [];
 				var index = temp.indexOf(id.toString());
 				if(index !== -1){
 					return true;
@@ -39,27 +40,27 @@
 			},
 
 			add: function(id){ //Added id.
-				var temp = JSON.parse(localStorage.getItem('cart')) || [];
+				var temp = JSON.parse(localStorage.getItem(cartID)) || [];
 				// if(!Array.isArray(temp)) temp = []; //SAVE FOR LATER
 				var index = temp.indexOf(id.toString());
 				if(index === -1){
 					temp.push(id.toString());
-					localStorage.setItem('cart', JSON.stringify(temp));
+					localStorage.setItem(cartID, JSON.stringify(temp));
 				}
 
 			},
 
 			remove: function(id){ //Removes id.
-				var temp = JSON.parse(localStorage['cart']);
+				var temp = JSON.parse(localStorage[cartID]);
 				var index = temp.indexOf(id.toString());
 				if(index !== -1){
 					temp.splice(index, 1);
-					localStorage.setItem('cart', JSON.stringify(temp));
+					localStorage.setItem(cartID, JSON.stringify(temp));
 				}
 			},
 
 			clear: function(){ //Clears shopping cart.
-				localStorage.setItem('cart', []);
+				localStorage.setItem(cartID, []);
 			}
 		};
 
@@ -109,7 +110,7 @@
 						return amount
 					}()
 				};
-				options.cart.html(info.amount + ' items in your cart, worth ' + info.costs + '$.');
+				options.cart.html(info.amount + ' items in your cart, worth ' + Math.round(info.costs) + '$.');
 			}
 		}
 		$.getJSON( 'data/items.json', function( data ) {
