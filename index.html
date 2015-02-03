@@ -19,7 +19,10 @@
 		<div class='site'>
 			<div class='sidebar' id='sidebar'>
 				<div class='header'></div>
-				<div class='cart'></div>
+				<div class='cart'>
+					<p></p>
+					<a class="button" id="buy">Buy</a>
+				</div>
 				<div class='footer'></div>
 			</div>
 
@@ -46,7 +49,7 @@
 			  $(window).load(function() {
 				$("#shoplist").shopaholic({
 					header: $('.header'),
-					cart: $('.cart'),
+					cart: $('.cart > p'),
 					info: $('#info'),
 					username: 'jacksparrow'
 				});

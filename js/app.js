@@ -60,12 +60,13 @@
 			},
 
 			clear: function(){ //Clears shopping cart.
-				localStorage.setItem(cartID, []);
+				localStorage.setItem(cartID, '[]');
 			}
 		};
 
 		var render = {
 			items: function(data){ //Renders Items
+				$(Super).html('');
 				$.each( data.items, function( key, value ) {
 					$(Super).append(models.item(value)).show('slow');
 				});
@@ -73,6 +74,10 @@
 					var id = $(this).data('id');
 					if(id){
 						render.button(this, id);
+					}else if($(this).attr('id') === 'buy'){
+						db.clear()
+						render.items(jsonData);
+						render.cart();
 					}
 				})
 
@@ -103,11 +108,14 @@
 				var info = {
 					amount: db.list().length,
 					costs: function(){
-						var amount = 0;
-						for (item of db.list()) {
-							amount += shelf[item.toString()].price;
-						};
-						return amount
+						if(db.list().length !== 0){
+							var amount = 0;
+							for (item of db.list()) {
+								amount += shelf[item.toString()].price;
+							};
+							return amount
+						}
+						return 0
 					}()
 				};
 				options.cart.html(info.amount + ' items in your cart, worth ' + Math.round(info.costs) + '$.');
@@ -117,12 +125,13 @@
 			$.each( data.items, function( key, value ) {
 				shelf[value.id.toString()] = value //Reversing list to object
 			});
+
 			// console.log(items);
 			jsonData = data; //Saving data
 
 			render.desc(data); //Rendering description
 			render.items(data); //Rendering items
-			render.cart()
+			render.cart();
 		})
 		.fail(function(error){
 			console.log(error)
