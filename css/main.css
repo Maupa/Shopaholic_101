@@ -48,19 +48,19 @@ a:hover {
 	max-width: 128px;
 }
 
-.posts a {
+.cart a {
 	color: #444;
 }
 
-.posts a:hover {
+.cart a:hover {
 	color: #777;
 }
 
-.posts-list {
+.cart-list {
 	list-style-type: none;
 }
 
-.posts-list li {
+.cart-list li {
 	text-align: center;
 	line-height: 1.75em;
 }
@@ -91,7 +91,7 @@ a:hover {
 
 }
 
-.posts {
+.cart {
 	border-top: 1px solid #e7e7e7;
 	margin-top: 1em;
 	padding-top: 1.25em;
