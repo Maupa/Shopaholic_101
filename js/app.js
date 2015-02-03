@@ -4,11 +4,11 @@
 		var options = $.extend({
 			data: '/data/items.json', //This line adding another parameter to the options... ```expands``` it
 		}, params);
-		var cartID = options.username + '.cart';
-		var Super = this;
-		var jsonData = {};
-		var shelf = {};
-		var models = {
+		var cartID = options.username + '.cart'; //Generates ID.
+		var Super = this; //Saves current ``this``
+		var jsonData = {}; //Saves the JSON data
+		var shelf = {}; //Shelf with items
+		var models = { //List of models for generating content.
 			item: function(item) {
 				var text = db.in(item.id) ? '‒' : '+';
 				var colour = db.in(item.id) ? 'red' : '';
@@ -24,13 +24,13 @@
 			}
 		};
 
-		var db = {
+		var db = { //Database methods.
 
 			list: function(){ //Returns array of items.
 				return JSON.parse(localStorage.getItem(cartID)) || [];
 			},
 
-			in: function(id){
+			in: function(id){ //Returns if item in database or not
 				var temp = JSON.parse(localStorage.getItem(cartID)) || [];
 				var index = temp.indexOf(id.toString());
 				if(index !== -1){
@@ -39,7 +39,7 @@
 				return false;
 			},
 
-			add: function(id){ //Added id.
+			add: function(id){ //Adds id.
 				var temp = JSON.parse(localStorage.getItem(cartID)) || [];
 				// if(!Array.isArray(temp)) temp = []; //SAVE FOR LATER
 				var index = temp.indexOf(id.toString());
@@ -64,7 +64,7 @@
 			}
 		};
 
-		var render = {
+		var render = { //Render methods
 			items: function(data){ //Renders Items
 				$(Super).html('');
 				$.each( data.items, function( key, value ) {
@@ -89,7 +89,7 @@
 				
 				$('head').append('<title>' + data.name + '</title>'); //Add title
 			},
-			button: function(button, id){
+			button: function(button, id){ //Re-renders button
 				if(!db.in(id)){
 					db.add(id); //Adds item to list
 
@@ -104,7 +104,7 @@
 				}
 				render.cart();
 			},
-			cart: function(){
+			cart: function(){ //Renders cart info
 				var info = {
 					amount: db.list().length,
 					costs: function(){
@@ -121,7 +121,7 @@
 				options.cart.html(info.amount + ' items in your cart, worth ' + Math.round(info.costs) + '$.');
 			}
 		}
-		$.getJSON( 'data/items.json', function( data ) {
+		$.getJSON( 'data/items.json', function( data ) { //Gets JSON
 			$.each( data.items, function( key, value ) {
 				shelf[value.id.toString()] = value //Reversing list to object
 			});
