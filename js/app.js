@@ -6,7 +6,7 @@
 		}, params);
 		var Super = this;
 		var jsonData = {};
-		var items = {};
+		var shelf = {};
 		var models = {
 			item: function(item) {
 				var text = db.in(item.id) ? '‒' : '+';
@@ -26,7 +26,16 @@
 		var db = {
 
 			list: function(){ //Returns array of items.
-				return JSON.parse(localStorage.get('cart') || "[]");
+				return JSON.parse(localStorage.getItem('cart')) || [];
+			},
+
+			in: function(id){
+				var temp = JSON.parse(localStorage.getItem('cart')) || [];
+				var index = temp.indexOf(id.toString());
+				if(index !== -1){
+					return true;
+				}
+				return false;
 			},
 
 			add: function(id){ //Added id.
@@ -38,15 +47,6 @@
 					localStorage.setItem('cart', JSON.stringify(temp));
 				}
 
-			},
-
-			in: function(id){
-				var temp = JSON.parse(localStorage.getItem('cart')) || [];
-				var index = temp.indexOf(id.toString());
-				if(index !== -1){
-					return true;
-				}
-				return false;
 			},
 
 			remove: function(id){ //Removes id.
@@ -66,7 +66,7 @@
 		var render = {
 			items: function(data){ //Renders Items
 				$.each( data.items, function( key, value ) {
-					$(Super).append(models.item(value));
+					$(Super).append(models.item(value)).show('slow');
 				});
 				$('a.button').click(function(){ //Adds click handler
 					var id = $(this).data('id');
@@ -96,22 +96,32 @@
 					$(button).removeClass('red'); //Change the colour.
 					$(button).text('+'); //Changes the text.
 				}
+				render.cart();
 			},
 			cart: function(){
-
+				var info = {
+					amount: db.list().length,
+					costs: function(){
+						var amount = 0;
+						for (item of db.list()) {
+							amount += shelf[item.toString()].price;
+						};
+						return amount
+					}()
+				};
+				options.cart.html(info.amount + ' items in your cart, worth ' + info.costs + '$.');
 			}
-			
 		}
-
 		$.getJSON( 'data/items.json', function( data ) {
 			$.each( data.items, function( key, value ) {
-				items[value.id] = value //Reversing list to object
+				shelf[value.id.toString()] = value //Reversing list to object
 			});
-
+			// console.log(items);
 			jsonData = data; //Saving data
 
 			render.desc(data); //Rendering description
 			render.items(data); //Rendering items
+			render.cart()
 		})
 		.fail(function(error){
 			console.log(error)
