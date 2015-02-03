@@ -30,39 +30,9 @@ a {
 	border: none;
 }
 
-a img {
-	outline: none;
-}
-
 a:hover {
 	color: #555;
 	border: none;
-}
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-#logo {
-	max-width: 128px;
-}
-
-.cart a {
-	color: #444;
-}
-
-.cart a:hover {
-	color: #777;
-}
-
-.cart-list {
-	list-style-type: none;
-}
-
-.cart-list li {
-	text-align: center;
-	line-height: 1.75em;
 }
 
 /*****************************************************************************/
@@ -75,20 +45,6 @@ a:hover {
 	height: 100%;
 	width: 100%;
 	line-height: 1.25em;
-}
-
-.title {
-	display: inline-block;
-	text-align: center;
-}
-
-.tagline {
-	width: 100%;
-	color: #777;
-	text-align: center;
-	margin-top: 0.5em;
-	display: block;
-
 }
 
 .cart {
@@ -120,170 +76,13 @@ a:hover {
 	text-align: center;
 }
 
+img{
+	width: 100%;
+}
+
 .header img{
 	width:100%;
 }
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-
-
-#cover-photo-container,
-.info{
-	display: block;
-}
-
-.info {
-	margin-top: 3em;
-}
-
-.info h1 {
-	color: #494949;
-	margin-bottom: 0.35em;
-	font-size: 3.5em;
-	text-transform: uppercase;
-}
-
-.info.date{
-	padding-top: 0.5em;
-	margin-bottom: 2em;
-}
-
-.post {
-	line-height: 24px;
-	clear: both;
-}
-
-.post h2 {
-	margin-top: 1.25em;
-	margin-bottom: 1.25em;
-}
-
-.post a,
-#about a {
-	border-bottom: 1px dashed #8085C1;
-}
-
-.post a:hover {
-	border: none;
-}
-
-/* standard */
-.post pre {
-	border: 1px solid #ddd;
-	background-color: #eef;
-	padding: 0 .4em;
-}
-
-.post p {
-	font-family: 'Source Sans Pro', Arial, sans-serif;
-	font-size: 1.1em;
-}
-
-.post ul, .post ol {
-	margin-left: 2.35em;
-	margin-bottom: 1.25em;
-}
-
-.post code {
-	border: 1px solid #ddd;
-	background-color: #eef;
-	padding: 0 .2em;
-}
-
-.post pre code {
-	border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-	border: 1px solid #000;
-	background-color: #333;
-	color: #FFF;
-}
-
-.post pre.terminal code {
-	background-color: #333;
-}
-
-/*****************************************************************************/
-/*
-/* Pages
-/*
-/*****************************************************************************/
-
-.page {
-	line-height: 24px;
-	padding-right:2.125em;
-	clear: both;
-}
-
-.page h2 {
-	margin-top: 1.25em;
-	margin-bottom: 1.25em;
-}
-
-.page a,
-#about a {
-	border-bottom: 1px dashed #8085C1;
-}
-
-.page a:hover {
-	border: none;
-}
-
-/* standard */
-.page pre {
-	border: 1px solid #ddd;
-	background-color: #eef;
-	padding: 0 .4em;
-}
-
-.page p {
-	font-size: 1.1em;
-}
-
-.page ul, .page ol {
-	margin-left: 2.35em;
-	margin-bottom: 1.25em;
-}
-
-.page code {
-	border: 1px solid #ddd;
-	background-color: #eef;
-	padding: 0 .2em;
-}
-
-.page pre code {
-	border: none;
-}
-
-/* terminal */
-.page pre.terminal {
-	border: 1px solid #000;
-	background-color: #333;
-	color: #FFF;
-}
-
-.page pre.terminal code {
-	background-color: #333;
-}
-.page div.inter p{
-	font-size: 1.3em;
-}
-.page div.inter a{
-	color:#8a8a8a;
-	border-bottom: None;
-}
-.page div.inter a:hover{
-	color:#8a8a8a;
-	border-bottom: 1px dashed #8085C1;
-}
-
 
 /*****************************************************************************/
 /*
@@ -317,29 +116,6 @@ a:hover {
 	text-align: center;
 	padding-top: 2em;
 	font-size: 1.1em;
-}
-
-.post.center{text-align: center;}
-.post.right{text-align: right;}
-.post.left{text-align: left;}
-
-.post-link {
-	margin-bottom: 0.75em;
-}
-
-.post-title {
-	font-weight: 600;
-	font-size: 1.4em;
-	text-transform: uppercase;
-}
-
-.post-date {
-	color: #8a8a8a;
-	font-family: Monaco, "Courier New", monospace;
-	font-weight: 600;
-	font-size: 0.65em;
-	display: block;
-	text-transform: lowercase;
 }
 
 p.name{
@@ -399,42 +175,7 @@ a.button.red:active,
 #sidebar-button:hover {
 	opacity: 0.7;
 }
-.galleryitem{
-	width: 200px;
-}
-/*****************************************************************************/
-/*
-/* Colophon
-/*
-/*****************************************************************************/
 
-hr, .colophon {
-	margin-top: 1.5em;
-	margin-bottom: 1.45em;
-	border-top: 1px dotted #e7e7e7;
-}
-
-.colophon p {
-	margin-top: 1.25em;
-	font-size: 0.95em;
-	color: #777;
-}
-
-.center{
-	text-align: center;
-}
-
-/*****************************************************************************/
-/*
-/* Buy
-/*
-/*****************************************************************************/
-
-/*a.add{
-	background: #3b8c1b url('../img/add.cart.png');
-	background-size: 24px;
-	padding: 6px 10px;
-}*/
 /*****************************************************************************/
 /*
 /* Row and Coloums
