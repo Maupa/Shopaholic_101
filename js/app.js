@@ -18,7 +18,7 @@
 				return '<div class="col-3">' + 
 						'<div class="item">' + 
 							'<div class="col-12">' + 
-								'<p class="price" style="background-image: url(\'data/' + item.image + '\');">' + item.price + '$</p>' +
+								'<p class="price" style="background-image: url(\'data/' + item.image + '\');">$' + item.price + '</p>' +
 							'</div>' + 
 							'<p class="name">' + item.name + '<a class="button ' + colour + '" data-id="' + item.id + '" href="#">' + text + '</a></p>' + 
 						'</div>' + 
