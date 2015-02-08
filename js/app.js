@@ -4,10 +4,12 @@
 		var options = $.extend({
 			data: '/data/items.json', //This line adding another parameter to the options... ```expands``` it
 		}, params);
+
 		var cartID = options.username + '.cart'; //Generates ID.
 		var Super = this; //Saves current ``this``
 		var jsonData = {}; //Saves the JSON data
 		var shelf = {}; //Shelf with items
+
 		var models = { //List of models for generating content.
 			item: function(item) {
 				var text = db.in(item.id) ? '‒' : '+';
@@ -16,7 +18,7 @@
 				return '<div class="col-3">' + 
 						'<div class="item">' + 
 							'<div class="col-12">' + 
-								'<img src="data/' + item.image + '">' + 
+								'<p class="price" style="background-image: url(\'data/' + item.image + '\');">' + item.price + '$</p>' +
 							'</div>' + 
 							'<p class="name">' + item.name + '<a class="button ' + colour + '" data-id="' + item.id + '" href="#">' + text + '</a></p>' + 
 						'</div>' + 

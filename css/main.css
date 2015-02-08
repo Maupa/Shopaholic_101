@@ -73,7 +73,16 @@ a:hover {
 
 .item{
 	padding: 1.5em;
-	text-align: center;
+	text-align: right;
+}
+
+p.price{
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	padding-top: 100%;
+	text-align: left;
+	font-weight: bold;
 }
 
 img{
