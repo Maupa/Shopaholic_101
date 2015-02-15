@@ -172,7 +172,7 @@ Note: All arguments **MUST** be entered, and they **MUST** be entered in the sam
 
 ```js
 var me = function(name, height){
-	return 'My name is ' + name + '. My height is ' + height + 'cm.'
+	return 'My name is ' + name + '. My height is ' + height + 'cm.';
 }
 
 me(192, 'Yuriy') === 'My name is 192. My height is Yuriycm.'; //Not good!
@@ -181,3 +181,91 @@ me('Yuriy', 192) === 'My name is Yuriy. My height is 192cm.'; //Thats right!
 ```
 
 It this course I will be mainly using Object Orientated way. Reasoning for that I will explain further through.
+
+### Code style
+
+Last couple things you need know before we start to practice is a code styling. In any programming language good code style is crucial to write good code, elegant code with less mistakes.
+
+ - **SEMICOLON EVERYTHING!** - it is the most critical rule that you **MUST** learn. You must put semicolon at the end of every line, unless you have situation when do not need to. This rule is so important because JavaScript trying to be nice and put semicolon after every line while interpreting it. Example of that behavior: 
+ 
+```js
+var me = function(){
+	return {
+		name: 'Yuriy'
+	}
+}
+me() === { name: 'Yuriy' }; //All good
+
+var me = function(){
+	return 
+	{
+		name: 'Yuriy'
+	}
+}
+me() === undefined; // :-( Oops,
+```
+
+ - **Spacing/Tabbing** - it is way easier to understand code, when it is beautifully spaced:
+```js
+var hello = function(name){return 'Hello ' + name + '!';}
+
+//VS
+
+var hello = function(name){
+	return 'Hello ' + name + '!';
+}
+```
+
+ - **Quotes** - there constant arguments what is better to use: single quotes(') or Double quote("). It is up to you to decide which quotes to use, but if you do, use them only. Do not mix them up, or your code will become hell to understand.
+```js
+var bad = function(name){
+	return 'Hello ' + name + "!";
+}
+
+var good = function(name){
+	return 'Hello ' + name + '!';
+}
+//OR
+var good = function(name){
+	return "Hello " + name + "!";
+}
+```
+
+
+ - **Comment like you on Youtube** - comment code. Explain what it does.
+```js
+code here... //Single line comment But not here...
+
+code here.. /*Enclosed single line comment*/ ...and here 
+
+/* 
+* Multiple
+* line
+* comment
+*/
+```
+
+```js
+/*
+* Written by Yuriy
+*/
+var sayHelloTo = function(name){ //Says hello to {name}
+	return "Hello " + /* I am inside the code*/ name + "!" ;
+}
+```
+
+ - **Adequate variable name** - variable name must describe what inside:
+
+```js
+//BAD - never do this
+var varible1 = 42;
+var varible2 = 'hello';
+var varible3 = 'world';
+
+//GOOD
+var shopping_list = ['butter', 'bread', 'wittakers'];
+var name = 'Bob';
+var money = 29;
+
+//..etc
+``` 
