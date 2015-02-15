@@ -24,7 +24,7 @@ JS is a dynamic language or to be correct, it is dynamically typed. That means t
 In JS there three main `atom` type. 
 
  - String - we can simply call it text. Example: 'milk', 'I love you!', '42' etc.
- - Integer - 64bit number from. Example: 1, 2, 42, -275 etc.
+ - Integer - A number. Example: 1, 2, 42, -275 etc.
  - Float - Like integer, but can hold decimal numbers. Example: 3.14159265359...
  
 They called `atom`s because they are the most basic types in the language.
