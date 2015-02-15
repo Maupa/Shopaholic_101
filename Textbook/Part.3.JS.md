@@ -24,7 +24,7 @@ JS is a dynamic language or to be correct, it is dynamically typed. That means t
 In JS there three main `atom` type. 
 
  - String - we can simply call it text. Example: 'milk', 'I love you!', '42' etc.
- - Integer - A number. Example: 1, 2, 42, -275 etc.
+ - Integer - A whole number. Example: 1, 2, 42, -275 etc.
  - Float - Like integer, but can hold decimal numbers. Example: 3.14159265359...
  
 They called `atom`s because they are the most basic types in the language.
@@ -33,15 +33,15 @@ In JS you must initialize variable. To do this you simply place `var` before var
 ```js
 var x = 'hello'; //Defining variable x with string value 'hello'
 
-x = 'alice'; //Assigning string 'alice'
+x 	= 	'alice'; //Assigning string 'alice'
 
-x = 42; //Assigning integer
+x 	= 	42; 	//Assigning integer
 
-x = 3.14 //Assigning float 
+x 	= 	3.14 	//Assigning float 
 
 ```
 
-### Arrays and Objects
+### Arrays
 Array is indexed collection of elements. To access element you need to know the index of it. Usually in most of the programming languages you define it in square brackets `[] === Array`. Think about `array` like its a street. Each house has its number(index).
 
 Note: In programming you start to count from `0`, not `1`. So first element will always be `0`.
@@ -59,19 +59,79 @@ array[2] === 3.14;
 array[3] === []; //Will return an empty array
 ```
 
+To add item to array you `push` it:
+
 ```js
-var object = {
-	key: 'Value',
-	hello: 'world!',
-	answer: 42
+
+var array = [];
+
+array.push('hello');
+array.push('world!');
+
+array === ['hello', 'world!'];
+```
+
+To find length of the array you simply 'length' it:
+
+```js
+
+var array = ['1', 2, 3.14];
+
+array.length === 3;
+```
+
+To change the value of the item in the array you simply assign value to it. Like with variable:
+
+```js
+var words = ['Hello','world','!'];
+words[1] = 	'Alice'; //Assigning value of string 'Alice' to element 1 in array of words.
+
+words === 	['Hello','Alice','!'];
+```
+
+To remove item from the array you need to splice it:
+
+`Array.splice(index, how many to remove after index)`
+
+```js
+var array = ['1', 2, 3.14]
+//            remove 1
+array.splice(0, 1);
+//   start index
+```
+
+### Objects
+
+Objects are key-value data structures. You give it a key, it gives you the value. Real world example could be your self: eye_colour(key) - green(value), hair_colour - blond, height - 192cm... etc. 
+
+Accessing objects done the same way as array, except instead of index you give it a key. Accessing can be done three ways:
+
+ - Array style - `object['key'] === 'value'` - If key does not exist, will return `undefined`
+ - Static style(Hard-coded method) - `object.key === 'value'` - If key does not exist, will return error. Use this style only if you are sure that key exists.
+
+```js
+var me = {
+	eye_colour:		'green',
+	hair_colour:	'blond',
+	height:			192
 }
 
-object['key'] === 'Value';
+me['eye_colour']	=== 	'green';
 
-object['hello'] === 'world';
+object.hair_colour	=== 	'blond';
 
-object['answer'] === 42;
+object['height']	=== 	192;
 
+```
+
+Creating and modifying key done same way as array, except, again, instead of index, you use key.
+
+```js
+var car = {};
+
+car['colour'] = 'red';
+
+car.weight = 687;
 ```
 
 ### Functions
