@@ -9,7 +9,7 @@ JavaScript is a dialect of EcmaScript. It is dynamic prototype scripting languag
 ## History
 
 **Brendan Eich**
-JavaScript was developed in 1995 by Brendon Eich while he was working in Netscape(now Mozilla Foundation). Original name was LiveScript, but since in those days word ```Java``` were really popular, he decided to call it JavaScript. In 1997 Ecma International(till 1994 European Computer Manufacturers Association - **ECMA**) with support from Netscape delivered official standardized specification of JavaScript, that called ECMAScript.
+JavaScript was developed in 1995 by Brendon Eich while he was working in Netscape(now Mozilla Foundation). Original name was LiveScript, but since in those days word `Java` were really popular, so he decided to call it JavaScript. In 1997 Ecma International(till 1994 European Computer Manufacturers Association - **ECMA**) with support from Netscape delivered official standardized specification of JavaScript, that called ECMAScript.
 
 ![Brendan Eich](https://upload.wikimedia.org/wikipedia/commons/d/d1/Brendan_Eich_Mozilla_Foundation_official_photo.jpg)
 
@@ -136,22 +136,48 @@ car.weight = 687;
 
 ### Functions
 
+Functions are like toaster. You put piece of bread into the toaster, it toast it, and gives you toast. Same for functions. You give a function information, it process it, and returns you the value. 
 
-# JSON - The Internet Driver.
+In JS we initialize function with the magic word `function`. And we can do it two ways:
 
-In this section we will discover new technology called ```JSON```, find out where it's been used, and write our own JSON data file.
+ - Classical way - `function hello(){ return 'world'; }`
+ - OO(Object Orientated way) - `var hello = function(){ return 'world';}`
 
-## What is it?
+They way you call functions is by simply adding round bracket on the end of the name.
 
-JSON stands for JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. [From Wikipedia]
+```js
+var hello = function(){ 
+	return 'world';
+}
+hello() === 'world';
+```
 
-Simple example:
-```javascript
-{
-    "hello":"world"
+Functions can take arguments(parameters): 
+
+```js
+var SayHelloTo = function(name){
+	return 'Hello ' + name + '!';
 }
 ```
 
-## Where it's been used?
+So now we have `function` with `1` argument called `name`. We can access argument same way as variable.
 
-Well... It easier to answer where it is not been used. JSON is second most used data transmit format after XML. 
+Now we can run function with argument.
+
+```js
+SayHelloTo('Martin') === 'Hello Martin!';
+```
+
+Note: All arguments **MUST** be entered, and they **MUST** be entered in the same sequence as defined in the function. Example:
+
+```js
+var me = function(name, height){
+	return 'My name is ' + name + '. My height is ' + height + 'cm.'
+}
+
+me(192, 'Yuriy') === 'My name is 192. My height is Yuriycm.'; //Not good!
+
+me('Yuriy', 192) === 'My name is Yuriy. My height is 192cm.'; //Thats right!
+```
+
+It this course I will be mainly using Object Orientated way. Reasoning for that I will explain further through.
