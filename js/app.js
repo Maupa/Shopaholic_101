@@ -90,6 +90,7 @@
 				options.header.append('<img src=\"data/' + data.logo + '\"/>'); //Add image
 				options.header.append('<h1>' + data.name + '</h1>'); //Add name
 				options.header.append('<h3>' + data.description + '</h3>');//Add description
+				options.footer.append('<p>' + data.info.address + '</p>');
 				
 				$('head').append('<title>' + data.name + '</title>'); //Add title
 			},
