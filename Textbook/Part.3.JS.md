@@ -8,7 +8,10 @@ JavaScript is a dialect of EcmaScript. It is dynamic prototype scripting languag
 
 ## History
 
-JavaScript
+**Brendan Eich**
+JavaScript was developed in 1995 by Brendon Eich while he was working in Netscape(now Mozilla Foundation). Original name was LiveScript, but since in those days word ```Java``` were really popular, he decided to call it JavaScript. In 1997 Ecma International(till 1994 European Computer Manufacturers Association - **ECMA**) with support from Netscape delivered official standardized specification of JavaScript, that called ECMAScript.
+
+![Brendan Eich](https://upload.wikimedia.org/wikipedia/commons/d/d1/Brendan_Eich_Mozilla_Foundation_official_photo.jpg)
 
 ## The code
 
@@ -44,6 +47,13 @@ var object = {
 	hello: 'world!',
 	answer: 42
 }
+
+object['key'] === 'Value';
+
+object['hello'] === 'world';
+
+object['answer'] === 42;
+
 
 ```
 
