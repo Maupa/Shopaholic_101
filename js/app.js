@@ -19,7 +19,7 @@
 						'<div class="item">' +
 							'<div class="col-12">' +
 								'<p class="price" style="background-image: url(\'data/' + item.image + '\');">$' + 
-									item.price + 
+									item.price + ' / ' + item.weight +
 								'</p>' +
 							'</div>' + 
 							'<p class="name">' + item.name + '<a class="button ' + colour + '" data-id="' + item.id + '" href="#">' + text + '</a></p>' + 
