@@ -51,6 +51,7 @@
 			"type":"Oolong",
 			"image": "img/dahongpao.jpg",
 			"category":"Chinese oolong",
+			"weight": "100g",
 			"price": 25.88
 		},
 		{
@@ -61,6 +62,7 @@
 			"type":"Oolong",
 			"image": "img/tungting.jpg",
 			"category":"Taiwanese Oolong",
+			"weight": "100g",
 			"price": 25.88
 		}
 	]
